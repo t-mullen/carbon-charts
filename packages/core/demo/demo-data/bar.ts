@@ -73,18 +73,12 @@ export const groupedBarOptions = {
 
 // Simple bar
 export const simpleBarData = {
-	labels: ["Qty", "More", "Sold", "Restocking", "Misc"],
+	labels: ["0-100cm", "100-200cm", "200-300cm", "300-400cm", "400-500cm", "500-600cm", "700-800cm", "800-900cm", "900+cm"],
 	datasets: [
 		{
-			label: "Dataset 1",
+			label: "Ultrasound Range",
 			backgroundColors: colors,
-			data: [
-				65000,
-				29123,
-				35213,
-				51213,
-				16932
-			]
+			data: (new Array(10)).fill(0)
 		}
 	]
 };
@@ -93,7 +87,7 @@ export const simpleBarOptions = {
 	accessibility: false,
 	scales: {
 		x: {
-			title: "2018 Annual Sales Figures",
+			title: "Time",
 		},
 		y: {
 			formatter: axisValue => `${axisValue / 1000}k`,

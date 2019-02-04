@@ -1,40 +1,12 @@
 import { colors } from "./colors";
 
 export const curvedLineData = {
-	labels: ["Qty", "More", "Sold", "Restocking", "Misc"],
+	labels: (new Array(20)).fill(0).map((v, i) => i),
 	datasets: [
 		{
-			label: "Dataset 1",
+			label: "Ultrasound Range",
 			backgroundColors: [colors[0]],
-			data: [
-				65000,
-				79000,
-				49213,
-				51213,
-				16932
-			]
-		},
-		{
-			label: "Dataset 2",
-			backgroundColors: [colors[1]],
-			data: [
-				80000,
-				21312,
-				56456,
-				21312,
-				0
-			]
-		},
-		{
-			label: "Dataset 3",
-			backgroundColors: [colors[2]],
-			data: [
-				12312,
-				34232,
-				39232,
-				12312,
-				34234
-			]
+			data: (new Array(20)).fill(0)
 		}
 	]
 };
@@ -43,7 +15,7 @@ export const curvedLineOptions = {
 	accessibility: false,
 	scales: {
 		x: {
-			title: "2018 Annual Sales Figures",
+			title: "Time",
 		},
 		y: {
 			yMaxAdjuster: yMax => yMax * 1.2,
@@ -58,7 +30,7 @@ export const curvedLineOptions = {
 		}
 	},
 	curve: {
-		name: "curveNatural"
+		name: "curveCatmullRom"
 	},
 	legendClickable: true,
 	containerResizable: true
